@@ -1,9 +1,9 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        HashMap<Integer, Integer> hm=new HashMap<>();
         int n=nums.length;
         if(n==1)
             return nums[0];
+        HashMap<Integer, Integer> hm=new HashMap<>();
         for(int p=0; p<n; p++)
         {
             if(hm.containsKey(nums[p]))
