@@ -1,15 +1,21 @@
 class Solution {
+    void RotateArray(int nums[], int start, int end)
+    {
+        end=end-1;
+        while (start < end) 
+        {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
     public void rotate(int[] nums, int k) {
         int n=nums.length;
         k=k%n;
-        int turnpoint=n-k;
-        int arr[]=new int[n];
-        int start=0;
-        for(int p=turnpoint; p<n;p++)
-            arr[start++]=nums[p];
-        for(int p=0;p<turnpoint;p++)
-            arr[start++]=nums[p];
-        for(int p=0;p<n; p++)
-            nums[p]=arr[p];
+        RotateArray(nums, 0, n);
+        RotateArray(nums, k, n);
+        RotateArray(nums, 0, k);
     }
 }
