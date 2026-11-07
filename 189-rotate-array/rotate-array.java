@@ -13,6 +13,8 @@ class Solution {
     }
     public void rotate(int[] nums, int k) {
         int n=nums.length;
+        if(n==1 || n==0)
+            return;
         k=k%n;
         RotateArray(nums, 0, n);
         RotateArray(nums, k, n);
